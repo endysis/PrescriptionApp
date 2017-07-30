@@ -1,0 +1,24 @@
+﻿<Window x:Class="Medical.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medical"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.ColumnSpan="2" Content="Prescribe" HorizontalAlignment="Left" Margin="342,82,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Scan" Grid.ColumnSpan="2" Content="Scan Patient" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="75" Click="Scan_Click"/>
+        <Label x:Name="PatientText" Grid.ColumnSpan="2" Content="Patient Text" HorizontalAlignment="Left" Margin="223,273,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="iDInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="iDInput_TextChanged"/>
+        <TextBox x:Name="prescrInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="342,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.ColumnSpan="2" Content="Scan Patient ID" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
+        <Label Grid.ColumnSpan="2" Content="Prescription" HorizontalAlignment="Left" Margin="342,23,0,0" VerticalAlignment="Top"/>
+        <Button Grid.ColumnSpan="2" Content="Remove Prescription" HorizontalAlignment="Left" Margin="342,107,0,0" VerticalAlignment="Top" Width="120" Click="Remove_Click"/>
+
+    </Grid>
+</Window>

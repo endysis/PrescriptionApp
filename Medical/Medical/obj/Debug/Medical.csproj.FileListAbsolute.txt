@@ -1,0 +1,14 @@
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\bin\Debug\Medical.exe.config
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\bin\Debug\Medical.exe
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\bin\Debug\Medical.pdb
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.csprojResolveAssemblyReference.cache
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\MainWindow.g.cs
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\App.g.cs
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical_MarkupCompile.cache
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical_MarkupCompile.lref
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\MainWindow.baml
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.g.resources
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.Properties.Resources.resources
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.csproj.GenerateResource.Cache
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.exe
+c:\users\o'shea\documents\visual studio 2017\Projects\Medical\Medical\obj\Debug\Medical.pdb
