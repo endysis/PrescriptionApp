@@ -20,56 +20,63 @@ namespace Medical
     /// </summary>
     public partial class MainWindow : Window
     {
-        PatientFile p;
-        // Later to be converted into classes for sync with database.
-        // But for now
-        List<Prescription> history;
-        List<Medicine> stock;
+        static PatientFile patientStorage;
+        static Stock medicineStock;
+        static PrescriptionHistory prescriptionHistory;
+
+        Patient patientOutput;
+        Medicine medicineOuput;
 
 
         public MainWindow()
         {
             InitializeComponent();
-            p = new PatientFile();  // Sync with the database
+            patientStorage = new PatientFile();  // Sync with the database
+            medicineStock = new Stock();
+            prescriptionHistory = new PrescriptionHistory();
         }
-         
-        private void Scan_Click(object sender, RoutedEventArgs e){
 
-            bool result = p.prescribe(iDInput.Text, prescrInput.Text);
-            switch (result) {
-                case false:
-                    MessageBox.Show("Patient has reached the prescription limit");
-                    break;
-                case true:
-                    break;
+        private void Scan_Click(object sender, RoutedEventArgs e) // Scaning in the name and bringing up patient details
+        {
+           patientOutput = patientStorage.find_Patient(iDInput.Text);
+           PatientText.Content = patientOutput.patientName;
+        }
+
+        private void Prescribe_Click(object sender, RoutedEventArgs e)
+        {
+            bool medicineResult = medicineStock.inStock(prescrInput.Text); // Checks If the required medicine is in stock
+            bool patientResult = patientStorage.checkPatientPrescriptionCount(patientOutput.patientName); // Checks the amount of prescriptions the patient has.
+            if (medicineResult == true){
+                if (patientResult == true)
+                {
+                    medicineOuput = medicineStock.removeStockForPatient(prescrInput.Text);
+                    prescriptionHistory.makePrescription(medicineOuput.medicineTitle, medicineOuput.medicineReference, StartDate.Text, EndDate.Text, patientOutput.patientId, double.Parse(Dosage.Text));
+                    patientStorage.incrementPrescriptionCount(iDInput.Text);
+                } else {
+                    MessageBox.Show("Cannot prescribe, the patient has reached the maximum prescription limit.");
+                }
+            } else {
+                MessageBox.Show("The requested medicine is not in stock");
             }
-            printIDList(iDInput.Text);
         }
 
         private void DisplayOutput(){
 
         }
 
-        private void iDInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            p.prescriptionTimeOut(iDInput.Text,prescrInput.Text);
+            patientStorage.prescriptionTimeOut(iDInput.Text,prescrInput.Text);
             printIDList(iDInput.Text);
         }
 
         private void printIDList(string iD) {
-            string outputString = "";
-            Patient patientOutput;
-            patientOutput = p.find_Patient(iDInput.Text.ToString());
-            foreach (string s in patientOutput.patientPrescriptions)
-            {
-                outputString = outputString + s + "/";
-            }
-            PatientText.Content = patientOutput.patientName + outputString;
+        
+        }
+
+        private void Show_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

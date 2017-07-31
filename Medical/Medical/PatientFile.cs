@@ -31,20 +31,29 @@ namespace Medical
                 }
             }
             return p;
-        } 
+        }
 
-        public bool prescribe(string patientID, string prescriptionID) {
+        public bool checkPatientPrescriptionCount(string patientID) {
             for (int i = 0; i < patients.Count; i++){
                 if (patients[i].patientId == patientID){
-                    if (patients[i].patientPrescriptionCount < 5)
-                    {
-                        patients[i].patientPrescriptionCount++;
-                    }
-                    else
+                    if (patients[i].patientPrescriptionCount < 5){
+                        return true;
+                    } else
                         return false;
                 }
             }
-            return true;
+            return false;
+        }
+
+        public void incrementPrescriptionCount(string patientID)
+        {
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].patientId == patientID)
+                {
+                    patients[i].patientPrescriptionCount++;
+                }
+            }
         }
 
         public bool prescriptionTimeOut(string patientID, string prescriptionID) { // Find the patient / Find the Specific prescription / Remove the prescription - N^2 Complexity - Cest pas tres bon

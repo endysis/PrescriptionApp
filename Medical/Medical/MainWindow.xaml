@@ -11,14 +11,23 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.ColumnSpan="2" Content="Prescribe" HorizontalAlignment="Left" Margin="342,82,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Scan" Grid.ColumnSpan="2" Content="Scan Patient" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="75" Click="Scan_Click"/>
-        <Label x:Name="PatientText" Grid.ColumnSpan="2" Content="Patient Text" HorizontalAlignment="Left" Margin="223,273,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="iDInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="iDInput_TextChanged"/>
-        <TextBox x:Name="prescrInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="342,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Grid.ColumnSpan="2" Content="Prescribe" HorizontalAlignment="Left" Margin="387,204,0,0" VerticalAlignment="Top" Width="120" Click="Prescribe_Click"/>
+        <Button x:Name="Scan" Grid.ColumnSpan="2" Content="Scan Patient" HorizontalAlignment="Left" Margin="387,179,0,0" VerticalAlignment="Top" Width="120" Click="Scan_Click"/>
+        <Label x:Name="PatientText" Grid.ColumnSpan="2" Content="Patient Name" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="iDInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="prescrInput" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="10,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Grid.ColumnSpan="2" Content="Scan Patient ID" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
-        <Label Grid.ColumnSpan="2" Content="Prescription" HorizontalAlignment="Left" Margin="342,23,0,0" VerticalAlignment="Top"/>
-        <Button Grid.ColumnSpan="2" Content="Remove Prescription" HorizontalAlignment="Left" Margin="342,107,0,0" VerticalAlignment="Top" Width="120" Click="Remove_Click"/>
+        <Label Grid.ColumnSpan="2" Content="Prescription" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top"/>
+        <Button Grid.ColumnSpan="2" Content="Remove Prescription" HorizontalAlignment="Left" Margin="387,229,0,0" VerticalAlignment="Top" Width="120" Click="Remove_Click"/>
+        <Label Grid.ColumnSpan="2" Content="Start Date" HorizontalAlignment="Left" Margin="159,23,0,0" VerticalAlignment="Top"/>
+        <Label Grid.ColumnSpan="2" Content="End Date" HorizontalAlignment="Left" Margin="159,76,0,0" VerticalAlignment="Top"/>
+        <Label Grid.ColumnSpan="2" Content="Dosage" HorizontalAlignment="Left" Margin="302,23,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StartDate" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="159,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="EndDate" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="159,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Dosage" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="302,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="resultPres" Grid.ColumnSpan="2" Content="Prescription Name" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="resultDos" Grid.ColumnSpan="2" Content="Dosage" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top"/>
+        <Button Grid.ColumnSpan="2" Content="Show Prescription" HorizontalAlignment="Left" Margin="387,257,0,0" VerticalAlignment="Top" Width="120" Click="Show_Click"/>
 
     </Grid>
 </Window>

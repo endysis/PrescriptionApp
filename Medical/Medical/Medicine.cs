@@ -16,7 +16,12 @@ namespace Medical
             reference = r;
         }
 
-        public string medicinetitle {
+        public string medicineTitle {
+            get { return title; }
+        }
+
+        public string medicineReference
+        {
             get { return title; }
         }
     }

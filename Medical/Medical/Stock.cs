@@ -27,10 +27,17 @@ namespace Medical
             return true;
         }
 
-        public Medicine removeStockForPatient(string title) {
+        public bool inStock(string medicineTitle) {
+            for(int i = 0; i < stock.Count; i++) {
+                if (medicineTitle == stock[i].medicineTitle) { return true; }
+            }
+            return false;
+        }
+
+        public Medicine removeStockForPatient(string medicineTitle) {
             Medicine medicine = new Medicine("","");
             for(int i = 0; i < stock.Count; i++) {
-                if(title == stock[i].medicinetitle) {
+                if(medicineTitle == stock[i].medicineTitle) {
                     medicine = stock[i];
                     stock.RemoveAt(i);
                     break;
@@ -44,7 +51,7 @@ namespace Medical
             int amount = quantity;
             for(int i = 0; i < stock.Count; i++) {
                 if (amount <= 0) {break;}
-                if (title == stock[i].medicinetitle) {
+                if (title == stock[i].medicineTitle) {
                     stock.RemoveAt(i);
                 }
             }
